@@ -5,7 +5,87 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <script type="module" src="new.js"></script>
         <style>
-        
+            .border-page{
+                box-sizing: border-box;
+                background-color: rgb(153, 222, 222);
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .box-1 {
+                position: relative;
+                height: 420px;
+                width: 380px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+            }
+            .box-2 {
+                position: relative;
+                height: 410px;
+                width: 370px;
+                overflow: hidden;
+                background-color: rgb(158, 235, 192);
+                border-radius: 10px;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;               
+            }
+            .box-1::before {
+                content: "";
+                position: absolute;
+                height: 420px;
+                width: 380px;
+                top: -50%;
+                left: -50%;
+                background: linear-gradient(0deg,transparent,transparent,rgb(78, 11, 236),rgb(72, 205, 16),green);
+                transform-origin: bottom right;
+                z-index: 1;
+                animation: border 9s linear 4s infinite;
+            }
+            .box-1::after {
+                content: "";
+                position: absolute;
+                height: 420px;
+                width: 380px;
+                top: -50%;
+                left: -50%;
+                z-index: 1;
+                background: linear-gradient(0deg,transparent,transparent,red,yellow,green);
+                transform-origin: bottom right;
+                
+                animation: border 9s linear 0s infinite;
+                
+            }
+            @keyframes border {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            .bg-clr {
+                background: linear-gradient(to left,rgb(247, 11, 188),rgb(232, 10, 10),rgb(97, 11, 234), rgb(239, 239, 89));
+                font-size: 30px;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: text 3s linear 1;
+            }
+            @keyframes text {
+                from {
+                    transform: translateX(-300px);
+                }
+                to {
+                    transform: translateX(0px);
+                }
+            }
+        /* ----------------------------------------------------------------------------------------------------------------------------------- */
          .bg-container{
                 background-color: aqua;
                 background-position: cover;
@@ -407,6 +487,15 @@
         </style>
     </head>
     <body>
+        <!-- ******************************************************************************************************** -->
+        <div class="border-page">
+                <div class="box-1">
+                    <div class="box-2">
+                        <h class="bg-clr"><b>HELLO TEJA</b></h>
+                    </div>
+                 </div>
+            </div>
+        <!-- ************************************************************************************************************* -->
         <div class="clock-page">
             <div>
             
@@ -448,7 +537,7 @@
             
         
          
-    <!-- ------------------------------------------------------->
+    <!-- ********************************************************************************************** -->
         <div class="logo-page">
             <div class="container2">
                 <div class="box-2">

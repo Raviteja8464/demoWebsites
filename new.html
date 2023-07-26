@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script type="module" src="new.js"></script>
+        <style>
+        
+         .bg-container{
+                background-color: aqua;
+                background-position: cover;
+                height:100vh;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                color: aliceblue;
+                font-size: 40px;
+                
+            }
+            .bg-container2{
+                background-color: rgb(98, 255, 0);
+                background-position: cover;
+                height:100vh;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                color: aliceblue;
+                font-size: 30px;
+            }
+            .bg-container3{
+                background-color: rgb(0, 255, 47);
+                background-position: cover;
+                height:100vh;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                color: aliceblue;
+                font-size: 30px;
+            }
+        
+            h {
+                rotate: 0deg;
+            }
+            h:hover{
+                text-shadow:rgb(220, 18, 139) -3px 0;
+                rotate: 0deg;
+                font-size: 50px;
+                color: blue;
+            }
+            a {
+                text-decoration: none;
+                animation: anchor 25s infinite;
+            }
+            @keyframes anchor {
+                100% {
+                    background-position: 100%;
+                }
+                
+            }
+            a:hover{
+                text-shadow: red 3px 0;
+                
+            }
+
+            .pop-up{
+                transition: 10s;
+                animation: button 25s infinite;
+            }
+            @keyframes button {
+                100%{
+                    background-position: 100%;
+                }
+                
+            }
+            .pop-up:hover {
+                color: green;
+                background-color: transparent;
+            
+            }
+            .earth {
+                background-image: url(https://res.cloudinary.com/dkao80enw/image/upload/v1690187865/globe_image_zbzret.jpg);
+                width: 50%;
+                position: absolute;
+                height:50%;
+                margin-top: 100px;
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-size: cover;
+                
+                animation: name duration timing-function delay iteration-count direction fill-mode;
+                animation: earth 120s linear infinite;
+                
+                box-shadow: insert 0 0 20px rgb(0, 0, 0),0 0 50px #4069ff; 
+                border-color: black;
+                border-width: 20px;
+            }
+            
+            @keyframes earth {
+                
+                
+                0% {
+                    background-position:0 0;
+                }
+                100% {
+                    background-position: -5000px 0;
+                }
+            }
+            @media (max-width: 380px) {
+                .img-bg{
+                    width: 20%;
+                    height:30%;
+                }
+                
+            }
+            
+            .circle{
+                text-transform: uppercase;
+                transform-style: preserve-3d;
+                animation: text 20s linear infinite;
+            }
+
+            .circle span{
+                position: absolute;
+                top: 0;
+                border-radius: 50%;
+                left: 0;
+                border-top: 3px solid orange;
+                border-bottom: 3px solid green;
+                padding:5px;
+                color:blue;
+                transform-origin: center;
+                transform-style: preserve-3d;
+                transform: rotateY(calc(var(--i) * calc(360deg / 20))) translateZ(200px);
+                background-color: rgb(228, 232, 222);
+
+            }
+            
+            .circle span::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width:100%;
+                height:100%;
+                background: white;
+                border-radius: 50%;
+                transform: translateZ(-5px);
+
+            }
+            @keyframes text {
+                0% {
+                    transform: perspective(50000px) rotateY(-90deg)translateY(-30px);
+                    background-position: 100%;
+                }
+                100% {
+                    transform: perspective(50000px) rotateY(0deg)translateY(-30px);
+                }
+                
+            }
+            section {
+                transform-style: preserve-3d;
+            }
+            .bg-rain{
+                  height: 100vh;
+                  background: url(https://res.cloudinary.com/dkao80enw/image/upload/v1690201569/rainjpeg_gs03pu.jpg);
+                  background-size: cover;
+                  width:100vw; 
+                animation: rain 10s linear infinite;    
+             }
+             .rain:before {
+                 content: "";
+                 position: absolute;
+                 width: 100%;
+                 height: 100%;
+                 background: #fff;
+                 animation: lighting 2s linear infinite;
+                 opacity: 0;
+             }
+             @keyframes rain {
+                0%
+                 {
+                    background-position:0% 0% ;
+                }
+                100%
+                 {
+                    background-position:-20% -100% ;
+                }
+             }
+             /*  ----------------- */
+             *{
+                margin: 0;
+                padding: 50px;
+                box-sizing: border-box;
+                font-family: sans-serif;
+             }
+             .clock-page {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                
+                justify-content: center;
+                
+                align-items: center;
+                background-color: rgb(31, 30, 27);
+                color: aliceblue;
+             }
+             .container {
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+
+             }
+             .clock {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                
+                border: 5px solid rgb(168, 155, 31);
+                box-shadow:0px 0px 30px rgb(230, 10, 116, 0.9);
+                animation: clock 0s linear infinite;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+            @keyframes clock {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+             .clock span{
+                position: absolute;
+                transform: rotate(calc(30deg * var(--i)));
+                inset: 12px;
+                text-align: center;
+             }
+             .clock span b {
+                transform: rotate(calc(-30deg * var(--i)));
+                font-size: 20px;
+                display: inline-block;
+
+             }
+            
+            .clock::before{
+                content: "R";
+                position: absolute;
+                z-index: 2;
+                
+                
+                
+            }
+            
+            
+            .hand i{
+                position: absolute;
+                background-color: var(--c);
+                width: 4px;
+                height: var(--h);
+                border-radius: 8px;
+                border-bottom: white;
+                border-left-color: white;
+
+            }
+            .hand {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                
+            }
+            .datebox {
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                color: rgb(8, 37, 228);
+                padding: 5px;
+                box-sizing: border-box;
+                box-shadow: 2px 2px 30px pink;
+                border-radius: 10px;
+                font-size: 30px;
+                gap: 2px;
+            }
+            .c-1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 70px;
+                box-shadow: 0px 0px 10px rgb(224, 224, 51);
+                border: none;
+                border-radius: 50%;
+                border-top:3px solid rgb(117, 144, 67);
+                animation: clock 180s linear infinite;
+            }
+            
+            .c-2 {
+                width: 30px;
+                height: 30px;
+                border:none;
+                border-radius: 50%;
+                box-shadow: 1px 1px 30px rgb(244, 244, 239);
+                /*border-top:3px solid rgb(241, 235, 235);*/
+                border-bottom: 3px solid rgb(241, 235, 235);
+                animation: clock 5s linear infinite;
+                
+            }
+            @keyframes clock {
+                0% {
+                    transform: rotate(0deg);
+                }
+                
+                100% {
+                    transform: rotate(360deg);
+                }
+            }            
+
+             * {
+                margin: 0px;
+                padding: 0px;
+                
+                box-sizing: border-box;
+              }
+              .container2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: black;
+                color: white;
+                
+
+              }
+              
+              .box-2{
+                display: flex;
+                
+                justify-content: center;
+                align-items: center;
+
+                width: 200px;
+                height: 200px;
+               
+                border: none;
+                border-top:10px solid rgb(227, 212, 10);
+                border-radius: 50%;
+                box-shadow:3px 3px 30px rgba(10, 223, 230);
+                animation: box-2 0s linear infinite;
+              }
+              
+              
+              .box-3{
+                width: 100px;
+                height: 100px;
+                display: flex;
+                box-shadow:3px 3px 30px rgba(10, 223, 230);
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-top:10px solid red;
+                border-bottom: 10px solid red;
+                border-radius: 50%;
+                
+                animation: box-2 20s linear infinite;
+              }
+              
+              .box-4{
+                width: 50px;
+                height: 25px;
+                color: aliceblue;
+                display: flex;
+                background-color:black ;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid chartreuse;
+                border-top:3px solid chartreuse;
+                border-radius: 50%;
+                
+                animation: box-2 .2s linear infinite;
+              }
+              @keyframes box-2 {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+              }
+              .head {
+                color: chartreuse;
+                font-size: 20px;
+                text-shadow: 1px 1px 3px rgb(239, 10, 189);
+              }
+              .logo-page{
+                height: 100vh;
+              }
+             
+        </style>
+    </head>
+    <body>
+        <div class="clock-page">
+            <div>
+            
+                <span class="datebox" id="day"></span>
+                <span class="datebox" id="month"></span>
+                <span class="datebox" id="year"></span>
+                <span class="datebox" id="timedate"></span>
+            
+            </div>
+            <div class="container">
+                
+                <div class="clock">
+                    <div style="--c:red; --h:50px;"  class="hand"  id="hour-hand"><i></i></div>
+                    <div style="--c:green; --h:70px;"  class="hand" id="min-hand"><i></i></div>
+                    <div style="--c:blue; --h:90px;"  class="hand" id="sec-hand"><i></i></div>
+                    
+    
+                    <span style="--i:1;"><b>1</b></span>
+                    <span style="--i:2;"><b>2</b></span>
+                    <span style="--i:3;"><b>3</b></span>
+                    <span style="--i:4;"><b>4</b></span>
+                    <span style="--i:5;"><b>5</b></span>
+                    <span style="--i:6;"><b>6</b></span>
+                    <span style="--i:7;"><b>7</b></span>
+                    <span style="--i:8;"><b>8</b></span>
+                    <span style="--i:9;"><b>9</b></span>
+                    <span style="--i:10;"><b>10</b></span>
+                    <span style="--i:11;"><b>11</b></span>
+                    <span style="--i:12;"><b>12</b></span>
+                    <div class="c-1">
+                        <div class="c-2">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            
+        
+         
+    <!-- ------------------------------------------------------->
+        <div class="logo-page">
+            <div class="container2">
+                <div class="box-2">
+                    <h class="head">RAVITEJA</h>
+                    <div class="box-3">
+                        <div class="box-4"> <h>R</h></div>
+                    </div>
+                </div>
+             </div>
+             
+        </div>
+       
+        <div class="bg-rain">
+
+        </div>
+        <div id="firstpage">
+           <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        
+
+              <div  class="bg-container">
+            
+            
+                <div class="earth">
+                    <div class="circle">
+                        <span style="--i:1">I</span>
+                        <span style="--i:2">N</span>
+                        <span style="--i:3">D</span>
+                        <span style="--i:4">I</span>
+                        <span style="--i:5">A</span>
+                    </div>
+                         
+                </div>
+            
+            <button class="pop-up">login</button>
+            
+            <a href="#secondpage">click 2 page</a>
+         </div>   
+        </div> 
+   
+         <div class="bg-container2" id="secondpage">
+            <h>home</h>
+            <h>calculator</h>
+            <h>wheather</h>
+            <h>time</h>
+            <h>contact us</h>
+            <h>wikipedia search</h>
+            <h>etc...</h>
+            <a href="#thirdpage">click 3 page</a>
+            <button>second page</button>
+         </div>
+         <div class="bg-container3" id="thirdpage">
+            <h>3 third-page</h>
+            
+            <div id="carouselExampleSlidesOnly"  class="carousel slide m-5 " data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="" class="d-block w-50 h-30" alt="logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dkao80enw/image/upload/v1680626813/bg-construction_vjm8wd.jpg" class="d-block w-50 h-30" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dkao80enw/image/upload/v1645369317/all_members_ravi_a6mbne.jpg" class="d-block w-50 h-30" alt="family images">
+                  </div>
+                </div>
+              </div><button type="button" class="btn btn-secondary mt-5"><a href="#firstpage">click 1 page</a></button>
+         </div>
+        
+        
+    </body>
+</html>
